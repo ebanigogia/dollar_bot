@@ -60,4 +60,16 @@ def display_pie_chart(user_history, user_budget):
     # Create a subplot for budget-related information
     ax2 = ax1[1]
 
+    # Check if the overall budget is exceeded
+    if user_budget is not None:
+        user_budget = float(user_budget)
+        total_expenses = sum(expenses)
+        budget_str = f"Overall Budget: ${user_budget:.2f}"
+        text += f"\n{budget_str}"
+        if total_expenses > user_budget:
+            budget_status = "You are over budget."
+        else:
+            budget_status = "You are within budget."
+        text += f"\n{budget_status}"
+
     return fig
