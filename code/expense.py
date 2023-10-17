@@ -60,4 +60,6 @@ def record_expense(message, category, bot):
 
         bot.send_message(chat_id, f"You have spent ${amount_value} for {category} on {date_of_entry}")
         helper.display_remaining_budget(message, bot, category)
+    except Exception as e:
+        bot.reply_to(message, "Oh no. " + str(e))
 
