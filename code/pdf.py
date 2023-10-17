@@ -12,3 +12,12 @@ def calculate_total_expenses(user_history):
         else:
             total_expenses[category] += amount
     return total_expenses
+
+def is_overall_budget_exceeded(user_history, overall_budget):
+    total_expenses = calculate_total_expenses(user_history)
+    total_spent = sum(total_expenses.values())
+    
+    if overall_budget is None:
+        if total_spent > overall_budget:
+            return True
+    return False
