@@ -51,4 +51,10 @@ def display_pie_chart(user_history, user_budget):
     ax1[0].set_title("Expenses by Category")
     ax1[0].axis('equal')
 
+    # Add text below the pie chart with categories, expenses, and dates
+    text = "Categorywise Expenses:\n"
+    for category, expense, date_list in zip(categories, expenses, dates):
+        date_str = ", ".join(date_list)
+        text += f"{category}: ${expense:.2f} (on {date_str})\n"
+
     return fig
