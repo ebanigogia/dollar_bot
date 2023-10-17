@@ -78,3 +78,20 @@ def display_pie_chart(user_history, user_budget):
     return fig
 
 def run(message, bot):
+    try:
+        helper.read_json()
+        chat_id = message.chat.id
+        user_history = helper.getUserHistory(chat_id)
+        user_budget = helper.getOverallBudget(chat_id)
+
+        message = "Alright. I just created a pdf of your expense history!"
+        bot.send_message(chat_id, message)
+        
+        fig = display_pie_chart(user_history, user_budget)
+
+        # Save the figure as a PDF
+        fig.savefig("expense_history.pdf")
+        plt.close(fig)
+        
+        # Send the PDF document
+        bot.send_document(chat_id, open("expense_history.pdf", "rb")) 
