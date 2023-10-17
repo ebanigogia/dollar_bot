@@ -27,5 +27,5 @@ def select_expense_category(message, bot):
     categories = helper.getSpendCategories()  # Retrieve the list of categories.
     for c in categories:
         markup.add(c)
-    msg = bot.send_message(message.chat, "Select Category for expense:", reply_markup=markup)
+    msg = bot.send_message(message.chat.id, "Select Category for expense:", reply_markup=markup)
     bot.register_next_step_handler(msg, expense_category_selected, bot)
