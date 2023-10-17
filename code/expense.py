@@ -4,7 +4,7 @@ import edit
 from datetime import datetime
 
 def process_expense_command(message, bot):
-    markup = telebot.types.ReplyKeyboardMarkup(one_time_keyboard=False)
+    markup = telebot.types.ReplyKeyboardMarkup(one_time_keyboard=True)
     options = ["Add", "Delete", "Update"]
     for opt in options:
         markup.add(opt)
