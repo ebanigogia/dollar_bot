@@ -45,5 +45,10 @@ def display_pie_chart(user_history, user_budget):
         dates.append(dates_str)
 
     fig, ax1 = plt.subplots(2, 1, figsize=(8, 8))
-    
+
+    # Create the pie chart
+    ax1[0].pie(expenses, labels=categories, autopct='%1.1f%%', startangle=140)
+    ax1[0].set_title("Expenses by Category")
+    ax1[0].axis('equal')
+
     return fig
