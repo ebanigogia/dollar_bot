@@ -79,7 +79,7 @@ def confirm_delete_expense(message, bot):
     user_data = user_list.get(str(chat_id))
     if user_data:
         expenses = user_data.get("data", [])
-        updated_expenses = [expense for expense in expenses if selected_expense in expense]
+        updated_expenses = [expense for expense in expenses if selected_expense not in expense]
         user_data["data"] = updated_expenses
         helper.write_json(user_list)
         bot.send_message(chat_id, f"Expense '{selected_expense}' has been deleted.")
