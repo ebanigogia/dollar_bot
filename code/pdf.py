@@ -32,3 +32,8 @@ def calculate_expenses_by_category(user_history):
         else:
             expenses_by_category[category] += amount
     return expenses_by_category
+
+def display_pie_chart(user_history, user_budget):
+    
+    
+    return fig
