@@ -33,7 +33,7 @@ def select_expense_category(message, bot):
 def expense_category_selected(message, bot):
     try:
         chat_id = message.chat.id
-        selected_category = message
+        selected_category = message.text
         if selected_category not in helper.getSpendCategories():
             bot.send_message(chat_id, "Invalid", reply_markup=telebot.types.ReplyKeyboardRemove())
             raise Exception(f'Sorry, I don\'t recognize this category "{selected_category}"!')
