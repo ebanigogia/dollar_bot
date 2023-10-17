@@ -17,7 +17,7 @@ def is_overall_budget_exceeded(user_history, overall_budget):
     total_expenses = calculate_total_expenses(user_history)
     total_spent = sum(total_expenses.values())
     
-    if overall_budget is None:
+    if overall_budget is not None:
         if total_spent > overall_budget:
             return True
     return False
