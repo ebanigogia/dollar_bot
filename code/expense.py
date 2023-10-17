@@ -20,4 +20,4 @@ def expense_option_selection(message, bot):
     elif selected_option == "Update":
         edit.run(message, bot)  # This calls the edit functionality
     else:
-        bot.send_message(message.chat, "Invalid option. Please try again.")
+        bot.send_message(message.chat.id, "Invalid option. Please try again.")
