@@ -57,4 +57,7 @@ def display_pie_chart(user_history, user_budget):
         date_str = ", ".join(date_list)
         text += f"{category}: ${expense:.2f} (on {date_str})\n"
 
+    # Create a subplot for budget-related information
+    ax2 = ax1[1]
+
     return fig
