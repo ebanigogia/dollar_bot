@@ -39,5 +39,11 @@ def display_pie_chart(user_history, user_budget):
     expenses = expenses_by_category.values()
     dates = []
     
+    # Extract the dates for each category
+    for category in categories:
+        dates_str = [record.split(',')[0] for record in user_history if category in record]
+        dates.append(dates_str)
+
+    fig, ax1 = plt.subplots(2, 1, figsize=(8, 8))
     
     return fig
