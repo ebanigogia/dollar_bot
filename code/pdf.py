@@ -81,11 +81,11 @@ def run(message, bot):
     try:
         helper.read_json()
         chat_id = message.chat.id
-        user_history = helper.getUserHistory(chat)
-        user_budget = helper.getOverallBudget(chat)
+        user_history = helper.getUserHistory(chat_id)
+        user_budget = helper.getOverallBudget(chat_id)
 
         message = "Alright. I just created a pdf of your expense history!"
-        bot.send_message(chat, message)
+        bot.send_message(chat_id, message)
         
         fig = display_pie_chart(user_history, user_budget)
 
