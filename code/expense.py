@@ -63,3 +63,12 @@ def record_expense(message, category, bot):
     except Exception as e:
         bot.reply_to(message, "Oh no. " + str(e))
 
+def delete_expense(message, bot):
+    markup = telebot.types.ReplyKeyboardMarkup(one_time_keyboard=True)
+    expenses = helper.getUserHistory(message.chat)  # Get user's expense history.
+    for expense in expenses:
+        markup.add(expense)
+    
+    msg = bot.send_message(message.chat.id, "Select the expense to delete:", reply_markup=markup)
+    bot.register_next_step_handler(msg, confirm_delete_expense, bot)
+
