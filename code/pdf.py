@@ -21,3 +21,14 @@ def is_overall_budget_exceeded(user_history, overall_budget):
         if total_spent > overall_budget:
             return True
     return False
+
+def calculate_expenses_by_category(user_history):
+    expenses_by_category = {}
+    for record in user_history:
+        _, category, amount = record.split(",")
+        amount = float(amount)
+        if category not in expenses_by_category:
+            expenses_by_category[category] = amount
+        else:
+            expenses_by_category[category] += amount
+    return expenses_by_category
