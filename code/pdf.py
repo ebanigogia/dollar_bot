@@ -71,5 +71,8 @@ def display_pie_chart(user_history, user_budget):
         else:
             budget_status = "You are within budget."
         text += f"\n{budget_status}"
+    
+    ax2.axis('off')
+    ax2.text(0.5, 0.5, text, horizontalalignment='center', verticalalignment='center', fontsize=14)
 
     return fig
