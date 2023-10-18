@@ -2,9 +2,6 @@ import helper
 import logging
 from telebot import types
 from datetime import datetime
-import category_add
-import category_delete
-import category_view
 
 
 option = {}
@@ -14,46 +11,19 @@ option = {}
 
 def run(message, bot):
     """
-    run(message, bot): This is the main function used to implement the budget feature.
-    It pop ups a menu on the bot asking the user to choose to add, remove or display a budget,
-    after which control is given to post_operation_selection(message, bot) for further proccessing.
-    It takes 2 arguments for processing - message which is the message from the user, and bot which is the
-    telegram bot object from the main code.py function.
+    run(message, bot): This is the main function used to implement the add feature.
+    It pop ups a menu on the bot asking the user to choose their expense category,
+    after which control is given to post_category_selection(message, bot) for further proccessing.
+    It takes 2 arguments for processing - message which is the message from the user,
+    and bot which is the telegram bot object from the main code.py function.
     """
+    helper.read_json()
+    chat_id = message.chat.id
+    option.pop(chat_id, None)  # remove temp choice
     markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
-    options = helper.getBudgetOptions()
     markup.row_width = 2
-    for c in options.values():
-        markup.add(c)
-    msg = bot.reply_to(message, "Select Operation", reply_markup=markup)
-    bot.register_next_step_handler(msg, post_operation_selection, bot)
-
-
-def post_operation_selection(message, bot):
-    """
-    post_operation_selection(message, bot): It takes 2 arguments for processing - message which
-    is the message from the user, and bot which is the telegram bot object from the
-    run(message, bot): function in the budget.py file. Depending on the action chosen by the user,
-    it passes on control to the corresponding functions which are all located in different files.
-    """
-    try:
-        chat_id = message.chat.id
-        op = message.text
-        options = helper.getBudgetOptions()
-        if op not in options.values():
-            bot.send_message(
-                chat_id, "Invalid", reply_markup=types.ReplyKeyboardRemove()
-            )
-            raise Exception('Sorry I don\'t recognise this operation "{}"!'.format(op))
-        if op == options["update"]:
-            category_add.run(message, bot)
-        elif op == options["view"]:
-            category_view.run(message, bot)
-        elif op == options["delete"]:
-            category_delete.run(message, bot)
-    except Exception as e:
-        # print("hit exception")
-        helper.throw_exception(e, message, bot, logging)
+    m = bot.send_message(chat_id, "Do you want to add a new category? Y/N")
+    bot.register_next_step_handler(m, post_user_def_category, bot)
 
 
 def post_user_def_category(message, bot):
@@ -197,6 +167,3 @@ def add_user_record(chat_id, record_to_be_added):
     print(user_list)
     print("!" * 5)
     return user_list
-
-if __name__ == "__main__":
-    bot.polling()
