@@ -145,11 +145,9 @@ For any feedback, issues, or bug reports, please create an issue [here](https://
 ## Contributors
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/usmanwardag"><img src="https://avatars.githubusercontent.com/u/8848723?v=4" width="75px;" alt=""/><br /><sub><b>Usman Khan</b></sub></a></td>
-    <td align="center"><a href="https://github.com/aakriti0fnu"><img src="https://avatars.githubusercontent.com/u/65619749?s=400&u=e7d56965d4414a95f969dbf53ed92b3e31fab610&v=4" width="75px;" alt=""/><br /><sub><b>Aakriti Aakriti</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/sbosenc"><img src="https://avatars.githubusercontent.com/u/89551210?v=4" width="75px;" alt=""/><br /><sub><b>Suneha Bose</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/muskan7828"><img src="https://avatars.githubusercontent.com/u/45363276?v=4" width="75px;" alt=""/><br /><sub><b>Muskan Gupta</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/kriti0207"><img src="https://avatars.githubusercontent.com/u/89510237?v=4" width="75px;" alt=""/><br /><sub><b>Kriti Khullar</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/ebanigogia"><br /><sub><b>Ebani Gogia</b></sub></a></td>
+    <td align="center"><a href="https://github.com/shrishty19"><br /><sub><b>Shrishty Singh</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/rhythmjagota"><br /><sub><b>Rhythm Jagota</b></sub></a><br /></td>
   </tr>
 </table>
 
