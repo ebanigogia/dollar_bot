@@ -143,7 +143,7 @@ def start_and_menu_command(m):
 
 
 # defines how the /new command has to be handled/processed
-@bot.message_handler(commands=["add"])
+@bot.message_handler(commands=["category"])
 def command_add(message):
     """
     command_add(message) Takes 1 argument message which contains the message from
