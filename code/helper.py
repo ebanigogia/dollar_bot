@@ -28,10 +28,10 @@ data_format = {"data": [], "budget": {"overall": None, "category": None}}
 commands = {
     "help": "Display the list of commands.",
     "pdf": "Save history as PDF.",
-    "category": "This option is for adding your expenses \
-       \n 1. It will give you the list of categories to choose from. \
-       \n 2. You will be prompted to enter the amount corresponding to your spending \
-       \n 3.The message will be prompted to notify the addition of your expense with the amount,date, time and category ",
+    "category": "This option is for add/view/delete the categories \
+       \n 1. After clicking on add/update, it will ask you to add the category \
+       \n 2. After clicking on view, it will help you to view the list of the categories \
+       \n 3. After clicking on delete, it will ask for the delete confirmation and delete the category from the list.  ",
     "display": "This option gives user a graphical representation(bar graph) of their expenditures \
         \n You will get an option to choose from day or month for better analysis of the expenses.",
     "estimate": "This option gives you the estimate of expenditure for the next day/month. It calcuates based on your recorded spendings",
