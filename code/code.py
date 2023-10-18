@@ -10,6 +10,9 @@ import pdf
 import display
 import estimate
 import delete
+import category_delete
+import category_add
+import category_view
 import add
 import budget
 from datetime import datetime
@@ -21,8 +24,9 @@ configs = Properties()
 with open("user.properties", "rb") as read_prop:
     configs.load(read_prop)
 
-api_token = str(configs.get("api_token").data)
+option = {}
 
+api_token = str(configs.get("api_token").data)
 bot = telebot.TeleBot(api_token)
 
 telebot.logger.setLevel(logging.INFO)
