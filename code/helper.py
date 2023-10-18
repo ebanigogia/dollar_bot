@@ -32,6 +32,10 @@ commands = {
        \n 1. After clicking on add/update, it will ask you to add the category \
        \n 2. After clicking on view, it will help you to view the list of the categories \
        \n 3. After clicking on delete, it will ask for the delete confirmation and delete the category from the list.  ",
+    "expense": "This option is for add/update/delete your expenses \
+        \n 1. After clicking on add, it will prompt you to add a new expense to a category of your choice \
+        \n 2. After clicking on update, it will give you the option to edit an existing expense made by you \
+        \n 3. After clicking on delete, you have the option to delete any expense after confirmation. ",
     "estimate": "This option gives you the estimate of expenditure for the next day/month. It calcuates based on your recorded spendings",
     "history": "This option is to give you the detailed summary of your expenditure with Date, time ,category and amount. A quick lookup into your spendings",
     "delete": "This option is to Clear/Erase all your records",
