@@ -153,7 +153,9 @@ For any feedback, issues, or bug reports, please create an issue [here](https://
   </tr>
 </table>
 
+## Chat Channel
 
+- https://discord.com/channels/1164337248746082394/1164337249387823152
 
 ## Acknowledgements
 
