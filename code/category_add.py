@@ -3,6 +3,7 @@ import logging
 import telebot
 from telebot import types
 from datetime import datetime
+#file to add new category
 def run(message, bot):
     helper.read_json()
     chat_id = message.chat.id
