@@ -1,7 +1,9 @@
 import helper
 import logging
 from telebot import types
-from datetime import datetime
+from datetime import datetime 
+import category_add
+import category_view
 
 
 option = {}
@@ -23,7 +25,35 @@ def run(message, bot):
     markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
     markup.row_width = 2
     m = bot.send_message(chat_id, "Do you want to add a new category? Y/N")
-    bot.register_next_step_handler(m, post_user_def_category, bot)
+    bot.register_next_step_handler(m, post_operation_selection, bot)
+
+def post_operation_selection(message, bot):
+    """
+    post_operation_selection(message, bot): It takes 2 arguments for processing - message which
+    is the message from the user, and bot which is the telegram bot object from the
+    run(message, bot): function in the budget.py file. Depending on the action chosen by the user,
+    it passes on control to the corresponding functions which are all located in different files.
+    """
+    try:
+        chat_id = message.chat.id
+        op = message.text
+        options = helper.getBudgetOptions()
+        if op not in options.values():
+            bot.send_message(
+                chat_id, "Invalid", reply_markup=types.ReplyKeyboardRemove()
+            )
+            raise Exception('Sorry I don\'t recognise this operation "{}"!'.format(op))
+        if op == options["update"]:
+            category_add.run(message, bot)
+        elif op == options["view"]:
+            category_view.run(message, bot)
+            """
+        elif op == options["delete"]:
+            category_delete.run(message, bot)
+            """
+    except Exception as e:
+        # print("hit exception")
+        helper.throw_exception(e, message, bot, logging)
 
 
 def post_user_def_category(message, bot):
