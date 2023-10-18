@@ -21,9 +21,8 @@ configs = Properties()
 with open("user.properties", "rb") as read_prop:
     configs.load(read_prop)
 
-option = {}
-
 api_token = str(configs.get("api_token").data)
+
 bot = telebot.TeleBot(api_token)
 
 telebot.logger.setLevel(logging.INFO)
@@ -144,7 +143,7 @@ def start_and_menu_command(m):
 
 
 # defines how the /new command has to be handled/processed
-@bot.message_handler(commands=["category"])
+@bot.message_handler(commands=["add"])
 def command_add(message):
     """
     command_add(message) Takes 1 argument message which contains the message from
