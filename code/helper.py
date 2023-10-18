@@ -28,7 +28,7 @@ data_format = {"data": [], "budget": {"overall": None, "category": None}}
 commands = {
     "help": "Display the list of commands.",
     "pdf": "Save history as PDF.",
-    "add": "This option is for adding your expenses \
+    "category": "This option is for adding your expenses \
        \n 1. It will give you the list of categories to choose from. \
        \n 2. You will be prompted to enter the amount corresponding to your spending \
        \n 3.The message will be prompted to notify the addition of your expense with the amount,date, time and category ",
