@@ -18,7 +18,7 @@ def run(message, bot):
     user_list = helper.read_json()
     if str(chat_id) in user_list:
         helper.write_json(deleteHistory(chat_id))
-        delete_history_text = "History has been deleted!"
+        delete_history_text = "The history has been deleted!"
     else:
         delete_history_text = "No records there to be deleted. Start adding your expenses to keep track of your spendings!"
     bot.send_message(chat_id, delete_history_text)
