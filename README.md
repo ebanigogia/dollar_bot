@@ -38,7 +38,6 @@
 
 [![GitHub issues](https://img.shields.io/github/issues/ebanigogia/dollar_bot)](https://github.com/ebanigogia/dollar_bot/issues)
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/ebanigogia/dollar_bot)](https://github.com/ebanigogia/dollar_bot/issues?q=is%3Aissue+is%3Aclosed)
-![Lines of code](https://img.shields.io/tokei/lines/github/sak007/MyDollarBot-BOTGo)
 
 <hr>
 
