@@ -32,8 +32,6 @@ commands = {
        \n 1. After clicking on add/update, it will ask you to add the category \
        \n 2. After clicking on view, it will help you to view the list of the categories \
        \n 3. After clicking on delete, it will ask for the delete confirmation and delete the category from the list.  ",
-    "display": "This option gives user a graphical representation(bar graph) of their expenditures \
-        \n You will get an option to choose from day or month for better analysis of the expenses.",
     "estimate": "This option gives you the estimate of expenditure for the next day/month. It calcuates based on your recorded spendings",
     "history": "This option is to give you the detailed summary of your expenditure with Date, time ,category and amount. A quick lookup into your spendings",
     "delete": "This option is to Clear/Erase all your records",
