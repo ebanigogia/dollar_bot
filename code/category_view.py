@@ -9,14 +9,7 @@ def run(message, bot):
     markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
     markup.row_width = 2
     chat_id = message.chat.id
-    """
-    chat_id = message.chat.id
-    markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
-    markup.row_width = 2
-    for c in helper.getSpendCategories():
-        markup.add(c)
-        bot.reply_to(message, "Categories", reply_markup=markup)
-        """
+    
     
     categories = helper.getSpendCategories()
 
