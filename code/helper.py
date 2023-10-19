@@ -39,9 +39,6 @@ commands = {
     "estimate": "This option gives you the estimate of expenditure for the next day/month. It calcuates based on your recorded spendings",
     "history": "This option is to give you the detailed summary of your expenditure with Date, time ,category and amount. A quick lookup into your spendings",
     "delete": "This option is to Clear/Erase all your records",
-    "edit": "This option helps you to go back and correct/update the missing details \
-        \n 1. It will give you the list of your expenses you wish to edit \
-        \n 2. It will let you change the specific field based on your requirements like amount/date/category",
     "budget": "This option is to set/update/delete the budget. \
         \n 1. The Add/update category is to set the new budget or update the existing budget \
         \n 2. The view category gives the detail if budget is exceeding or in limit with the difference amount \
