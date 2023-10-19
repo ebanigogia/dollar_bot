@@ -41,6 +41,10 @@ This function confirms and deletes the selected expense.
 It updates the user's data by removing the selected expense and writes the updated data back to storage.
 It then sends a confirmation message and calls helper.display_remaining_budget to display the remaining budget information.
 
+8. add_user_record Function:
+This function is used to add a new record to the user's data.
+It takes the user's chat ID and the record to be added, updates the user's data, and returns the updated data
+
 # How to run this feature?
 Once the project is running(please follow the instructions given in the main README.md for this), please type /expense into the telegram bot.
 
