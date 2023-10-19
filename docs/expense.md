@@ -32,6 +32,15 @@ It validates the amount, checks if it's nonzero, and records the expense along w
 It then stores the expense in the user's data and sends a confirmation message.
 Finally, it calls helper.display_remaining_budget to display the remaining budget information for the category.
 
+6. delete_expense Function:
+This function allows the user to select an expense to delete.
+It retrieves the user's expense history, generates a keyboard markup with the expenses, and registers a callback to confirm the deletion.
+
+7. confirm_delete_expense Function:
+This function confirms and deletes the selected expense.
+It updates the user's data by removing the selected expense and writes the updated data back to storage.
+It then sends a confirmation message and calls helper.display_remaining_budget to display the remaining budget information.
+
 # How to run this feature?
 Once the project is running(please follow the instructions given in the main README.md for this), please type /expense into the telegram bot.
 
