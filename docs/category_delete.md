@@ -1,4 +1,4 @@
-# About MyDollarBot's /expense Feature
+# About MyDollarBot's /category Feature
 This feature enables the user to delete the category from the list.
 
 # Location of Code for this Feature
