@@ -23,4 +23,9 @@
 |1	| Test cases are routinely executed	| https://app.codecov.io/gh/sak007/MyDollarBot-BOTGo |
 |3	| Documentation describing how this version improves on the older version| Updated README.md to show the Delta -> https://github.com/ebanigogia/dollar_bot/blob/main/README.md	|
 |3	| This version is a little(1), some(2), much(3) improved on the last version. | Tutor's assessment |
-|58	| Total	| |
+|3  | DOI Badge: exists | https://zenodo.org/records/10019964 |
+|3  | Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z | https://github.com/ebanigogia/dollar_bot/tree/main/docs |
+|3  | Video (at least 2 mins) | https://www.youtube.com/watch?v=O0sEIM39ejE&ab_channel=ShrishtySingh |
+|3  | Use of Version controls | Github is a version control tool |
+|3  | Chat channel exists | https://discord.com/channels/1164337248746082394/1164337249387823152 |
+|73	| Total	| |
