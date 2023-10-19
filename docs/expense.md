@@ -7,11 +7,10 @@ The code that implements this feature can be found [here](https://github.com/eba
 # Code Description
 ## Functions
 
-1. run(message, bot):
-This is the main function used to implement the delete feature. It takes 2 arguments for processing - **message** which is the message from the user, and **bot** which is the telegram bot object from the main code.py function. It calls helper to get the user history i.e chat ids of all user in the application, and if the user requesting a delete has their data saved in myDollarBot i.e their chat ID has been logged before, run calls the deleteHistory(chat_id): to remove it. Then it ensures this removal is saved in the datastore.
-
-2. deleteHistory(chat_id):
-It takes 1 argument for processing - **chat_id** which is the chat_id of the user whose data is to deleted from the user list. It removes this entry from the user list.
+1. process_expense_command Function:
+This function handles the initial expense-related command from a user.
+It sends a message to the user with a keyboard markup that allows them to choose from options: "Add," "Delete," or "Update."
+It registers a callback function (expense_option_selection) to handle the user's choice.
 
 # How to run this feature?
 Once the project is running(please follow the instructions given in the main README.md for this), please type /expense into the telegram bot.
