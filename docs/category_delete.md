@@ -23,5 +23,13 @@ Converts the user's input to lowercase and compares it with lowercase versions o
 If the category to remove is found in the list of categories, it asks the user for confirmation by sending a message with "Y/N" options.
 If the category is not in the list, it informs the user that the category is not in the list.
 
+3. confirm_deletion:
+This function handles the user's confirmation to delete a category. It does the following:
+Retrieves the chat_id from the message object.
+Gets the user's response (either "Y" or "N").
+If the user's response is "Y" (indicating confirmation to delete), it checks if the category to remove is in the list of categories. If found, it removes the category using helper.getSpendCategories().remove(category_to_remove) and sends a confirmation message. If not found, it informs the user that the category was not in the list.
+If the user's response is "N" (indicating cancellation), it informs the user that the deletion has been canceled.
+If the user's response is neither "Y" nor "N," it informs the user that their response is invalid and asks for "Y" or "N."
+
 # How to run this feature?
 Once the project is running(please follow the instructions given in the main README.md for this), please type /category and select delete from the given options.
