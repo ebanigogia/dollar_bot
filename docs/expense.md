@@ -21,6 +21,17 @@ This function is used to select the category for an expense.
 It sends a message with a keyboard markup containing expense categories.
 It registers a callback function (expense_category_selected) to handle the user's category selection.
 
+4. expense_category_selected Function:
+This function processes the selected expense category.
+It validates the selected category and asks the user for the amount spent in that category.
+It registers a callback function (record_expense) to handle the amount of input.
+
+5. record_expense Function:
+This function records the expense with the specified category and amount.
+It validates the amount, checks if it's nonzero, and records the expense along with the current date and time.
+It then stores the expense in the user's data and sends a confirmation message.
+Finally, it calls helper.display_remaining_budget to display the remaining budget information for the category.
+
 # How to run this feature?
 Once the project is running(please follow the instructions given in the main README.md for this), please type /expense into the telegram bot.
 
