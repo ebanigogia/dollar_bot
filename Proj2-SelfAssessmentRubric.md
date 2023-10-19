@@ -1,12 +1,12 @@
 |Score | Notes | Evidence |
 |-----|------|------|
-|.5	| Short release cycles| 2 Releases	-> https://github.com/sak007/MyDollarBot-BOTGo/releases |
-|.5	| Workload is spread over the whole team | Each memeber worked on a different feature -> https://github.com/sak007/MyDollarBot-BOTGo/pulse |
-|.5	| Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing	| Updated documentation for each feature -> https://github.com/sak007/MyDollarBot-BOTGo/tree/main/docs|
-|.5	| File CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up| https://github.com/sak007/MyDollarBot-BOTGo/blob/main/CONTRIBUTING.md |	
-|.5	| Docs: doco generated , format not ugly|	https://github.com/sak007/MyDollarBot-BOTGo/tree/main/docs|
+|.5	| Short release cycles| 2 Releases	-> https://github.com/ebanigogia/dollar_bot/releases |
+|.5	| Workload is spread over the whole team | Each memeber worked on a different feature -> https://github.com/ebanigogia/dollar_bot/pulse |
+|.5	| Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing	| Updated documentation for each feature -> https://github.com/ebanigogia/dollar_bot/tree/main/docs|
+|.5	| File CONTRIBUTING.md lists coding standards and lots of tips on how to extend the system without screwing things up| https://github.com/ebanigogia/dollar_bot/blob/main/CONTRIBUTING.md |	
+|.5	| Docs: doco generated , format not ugly|	https://github.com/ebanigogia/dollar_bot/tree/main/docs|
 |.5	| evidence that the whole team is using the same tools (e.g. config files in the repo, updated by lots of different people)	| |
-|.5	| evidence that the members of the team are working across multiple places in the code base|	https://github.com/sak007/MyDollarBot-BOTGo/pulse|
+|.5	| evidence that the members of the team are working across multiple places in the code base|	https://github.com/ebanigogia/dollar_bot/pulse |
 |1	| Docs: what: point descriptions of each class/function (in isolation)|	 https://github.com/sak007/MyDollarBot-BOTGo/tree/main/docs|
 |.5	| Number of commits: by different people| https://github.com/sak007/MyDollarBot-BOTGo/graphs/commit-activity	|
 |1	| issues are being closed| 26 Issues closed -> https://github.com/sak007/MyDollarBot-BOTGo/issues |
