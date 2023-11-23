@@ -10,6 +10,7 @@ import pdf
 import display
 import estimate
 import delete
+import add_recurring
 import category_delete
 import category_add
 import category_view
@@ -208,6 +209,10 @@ def command_display(message):
 def command_estimate(message):
     estimate.run(message, bot)
 
+# function to add recurring expenses
+@bot.message_handler(commands=['add_recurring'])
+def command_add_recurring(message):
+    add_recurring.run(message, bot)
 
 # handles "/delete" command
 @bot.message_handler(commands=["delete"])

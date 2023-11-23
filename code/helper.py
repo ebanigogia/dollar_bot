@@ -28,6 +28,7 @@ data_format = {"data": [], "budget": {"overall": None, "category": None}}
 commands = {
     "help": "Display the list of commands.",
     "pdf": "Save history as PDF.",
+    "add_recurring":"To add recurring expenses",
     "category": "This option is for add/view/delete the categories \
        \n 1. After clicking on add/update, it will ask you to add the category \
        \n 2. After clicking on view, it will help you to view the list of the categories \
@@ -199,7 +200,15 @@ def calculateRemainingOverallBudget(chat_id):
 
     return float(budget) - calculate_total_spendings(queryResult)
 
-
+def validate_entered_duration(duration_entered):
+    if duration_entered is None:
+        return 0
+    if re.match("^[1-9][0-9]{0,14}", duration_entered):
+        duration = int(duration_entered)
+        if duration > 0:
+            return str(duration)
+    return 0
+    
 def calculate_total_spendings(queryResult):
     total = 0
 
