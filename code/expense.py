@@ -48,7 +48,7 @@ def record_expense(message, category, bot):
     try:
         chat_id = message.chat.id
         amount_entered = message.text
-        amount_value = helper.validate_entered_amount(amount_entered)  # validate
+        amount_value = helper.validate_entered_amount(amount_entered)  #validate
 
         if amount_value == 0:  # cannot be $0 spending
             raise Exception("Spent amount has to be a non-zero number.")
@@ -66,9 +66,10 @@ def record_expense(message, category, bot):
 def delete_expense(message, bot):
     markup = telebot.types.ReplyKeyboardMarkup(one_time_keyboard=True)
     expenses = helper.getUserHistory(message.chat.id)  # Get user's expense history.
+   
     for expense in expenses:
         markup.add(expense)
-    
+        
     msg = bot.send_message(message.chat.id, "Select the expense to delete:", reply_markup=markup)
     bot.register_next_step_handler(msg, confirm_delete_expense, bot)
 

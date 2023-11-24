@@ -1,9 +1,11 @@
 import re
 import json
 import os
+import notification
 from datetime import datetime
 
 from notify import notify
+
 
 spend_categories = [
     "Food",
@@ -183,12 +185,16 @@ def display_remaining_overall_budget(message, bot):
     remaining_budget = calculateRemainingOverallBudget(chat_id)
     print("here", remaining_budget)
     if remaining_budget >= 0:
+        subject="Remaining Budget!"
         msg = "\nRemaining Overall Budget is $" + str(remaining_budget)
+        notification.send_email_notification(subject,msg)
     else:
+        subject="Exceeding Budget!"
         msg = (
             "\nBudget Exceded!\nExpenditure exceeds the budget by $" + str(remaining_budget)[1:]
         )
         # notify()
+        notification.send_email_notification(subject,msg)
     bot.send_message(chat_id, msg)
 
 
