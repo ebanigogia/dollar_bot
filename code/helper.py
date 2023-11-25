@@ -32,6 +32,7 @@ data_format = {"data": [],"income":None,"budget": {"overall": None, "category": 
 commands = {
     "help": "Display the list of commands.",
     "pdf": "Save history as PDF.",
+    "download":"Download expenses as CSV",
     "add_recurring":"To add recurring expenses",
     "category": "This option is for add/view/delete the categories \
        \n 1. After clicking on add/update, it will ask you to add the category \
