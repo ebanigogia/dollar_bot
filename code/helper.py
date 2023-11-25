@@ -20,9 +20,11 @@ update_options = {"continue": "Continue", "exit": "Exit"}
 
 budget_options = {"update": "Add/Update", "view": "View", "delete": "Delete"}
 
+income_options = {"update": "Add/Update", "view": "View", "delete": "Delete"}
+    
 budget_types = {"overall": "Overall Budget", "category": "Category-Wise Budget"}
 
-data_format = {"data": [], "budget": {"overall": None, "category": None}}
+data_format = {"data": [],"income":None,"budget": {"overall": None, "category": None}}
 
 # set of implemented commands and their description
 commands = {
@@ -44,6 +46,10 @@ commands = {
         \n 1. The Add/update category is to set the new budget or update the existing budget \
         \n 2. The view category gives the detail if budget is exceeding or in limit with the difference amount \
         \n 3. The delete category allows to delete the budget and start afresh!  ",
+    "income": "This option is to set/update/delete the income. \
+        \n 1. The Add/update category is to set the new income or update the existing income \
+        \n 2. The view category displays the existing income \
+        \n 3. The delete category allows to delete the income and start afresh!  ",
 }
 
 dateFormat = "%d-%b-%Y"
@@ -141,6 +147,13 @@ def getCategoryBudget(chatId):
         return None
     return data["budget"]["category"]
 
+def getTotalIncome(chatId):
+    data = getUserData(chatId)
+    if data is None:
+        return None
+    if "income" not in data:
+        data["income"]=0
+    return data["income"]
 
 def getCategoryBudgetByCategory(chatId, cat):
     if not isCategoryBudgetByCategoryAvailable(chatId, cat):
@@ -208,7 +221,7 @@ def validate_entered_duration(duration_entered):
         if duration > 0:
             return str(duration)
     return 0
-    
+
 def calculate_total_spendings(queryResult):
     total = 0
 
@@ -248,6 +261,9 @@ def calculate_total_spendings_for_category(queryResult, cat):
         if cat == s[1]:
             total = total + float(s[2])
     return total
+
+def isTotalIncomeAvailable(chatId):
+    return getTotalIncome(chatId) is not None 
 
 
 def getSpendCategories():
@@ -310,3 +326,6 @@ def getBudgetTypes():
 
 def getUpdateOptions():
     return update_options
+
+def getOptions():
+    return income_options

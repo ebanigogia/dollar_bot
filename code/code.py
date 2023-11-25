@@ -6,6 +6,7 @@ import time
 import helper
 import edit
 import history
+import income
 import pdf
 import display
 import estimate
@@ -235,6 +236,9 @@ def handle_expense_command(message):
 def command_budget(message):
     budget.run(message, bot)
 
+@bot.message_handler(commands=["income"])
+def command_income(message):
+    income.run(message, bot)
 
 # not used
 
