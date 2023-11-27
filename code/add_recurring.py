@@ -63,17 +63,41 @@ def post_duration_input(message, bot, selected_category, amount_value):
         duration_value = helper.validate_entered_duration(duration_entered)
         if duration_value == 0:
             raise Exception("Duration has to be a non-zero integer.")
+        
+        message = bot.send_message(chat_id, 'Add notes for this expense')
+        bot.register_next_step_handler(message, post_notes_input, bot, selected_category, amount_value,duration_value)
 
-        for i in range(int(duration_value)):
-            date_of_entry = (datetime.today() + relativedelta(months=+i)).strftime(helper.getDateFormat() + ' ' + helper.getTimeFormat())
-            date_str, category_str, amount_str = str(date_of_entry), str(option[chat_id]), str(amount_value)
-            helper.write_json(add_user_record(chat_id, "{},{},{}".format(date_str, category_str, amount_str)))
+
+        # for i in range(int(duration_value)):
+        #     date_of_entry = (datetime.today() + relativedelta(months=+i)).strftime(helper.getDateFormat() + ' ' + helper.getTimeFormat())
+        #     date_str, category_str, amount_str = str(date_of_entry), str(option[chat_id]), str(amount_value)
+        #     helper.write_json(add_user_record(chat_id, "{},{},{}".format(date_str, category_str, amount_str)))
            
-        bot.send_message(chat_id, 'Your expenditure has been recorded: You have spent ${} for {} for the next {} months'.format(amount_str, category_str, duration_value))
+        # bot.send_message(chat_id, 'Your expenditure has been recorded: You have spent ${} for {} for the next {} months'.format(amount_str, category_str, duration_value))
 
     except Exception as e:
         logging.exception(str(e))
         bot.reply_to(message, 'Oh no. ' + str(e))
+
+def post_notes_input(message, bot, selected_category, amount_value,duration_value):
+    try:
+        chat_id = message.chat.id
+        notes_entered = message.text
+
+        for i in range(int(duration_value)):
+            date_of_entry = (datetime.today() + relativedelta(months=+i)).strftime(
+                helper.getDateFormat() + ' ' + helper.getTimeFormat())
+            date_str, category_str, amount_str = str(date_of_entry), str(option[chat_id]), str(amount_value)
+            helper.write_json(add_user_record(chat_id, "{},{},{},{}".format(date_str, category_str, amount_str,notes_entered)))
+
+        bot.send_message(chat_id,
+                         'Your expenditure has been recorded: You have spent ${} for {} for the next {} months with notes {}'.format(
+                             amount_str, category_str, duration_value, notes_entered))
+
+    except Exception as e:
+        logging.exception(str(e))
+        bot.reply_to(message, 'Oh no. ' + str(e))
+
 
 def add_user_record(chat_id, record_to_be_added):
     user_list = helper.read_json()

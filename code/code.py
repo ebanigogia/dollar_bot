@@ -230,6 +230,9 @@ def command_delete(message):
 def handle_expense_command(message):
     process_expense_command(message, bot)
 
+@bot.message_handler(commands=["download"])
+def command_download(message):
+    history.download_history(message,bot)
 
 
 @bot.message_handler(commands=["budget"])

@@ -1,5 +1,24 @@
-# 💰 MyDollar Bot 💰
+<p align="center"><img width="500" src="./assests/Logo3.png"></p>
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Platform](https://img.shields.io/badge/Platform-Telegram-blue)](https://desktop.telegram.org/)
+![GitHub](https://img.shields.io/badge/Language-Python-blue.svg)
+[![GitHub contributors](https://img.shields.io/github/contributors/sak007/MyDollarBot-BOTGo)](https://github.com/ebanigogia/dollar_bot/graphs/contributors)
+[![DOI](https://zenodo.org/badge/706356133.svg)](https://zenodo.org/doi/10.5281/zenodo.10019963)
+[![Build Status](https://app.travis-ci.com/usmanwardag/dollar_bot.svg?branch=main)](https://app.travis-ci.com/usmanwardag/dollar_bot)
+[![codecov](https://codecov.io/gh/usmanwardag/dollar_bot/branch/main/graph/badge.svg?token=PYAWX95R67)](https://codecov.io/gh/usmanwardag/dollar_bot)
+
+[![GitHub issues](https://img.shields.io/github/issues/ameghana/CSC510-FALL23-P27-Project3-dollar_bot)](https://github.com/ameghana/CSC510-FALL23-P27-Project3-dollar_bot/issues)
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/ameghana/CSC510-FALL23-P27-Project3-dollar_bot)](https://github.com/ameghana/CSC510-FALL23-P27-Project3-dollar_bot/issues?q=is%3Aissue+is%3Aclosed)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/ameghana/CSC510-FALL23-P27-Project3-dollar_bot)](https://github.com/ameghana/CSC510-FALL23-P27-Project3-dollar_bot/pulls)
+[![python](https://img.shields.io/badge/Python-3.9-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
+[![GitHub Discussions](https://img.shields.io/github/discussions/ameghana/CSC510-FALL23-P27-Project3-dollar_bot)](https://github.com/ameghana/CSC510-FALL23-P27-Project3-dollar_bot/discussions)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![Discord](https://img.shields.io/discord/1161405668079698112)](https://github.com/ameghana/CSC510-FALL23-P27-Project2/blob/main/docs/SE%20Discord%20Chat%20Screenshot.png)
+![GitHub forks](https://img.shields.io/github/forks/ameghana/CSC510-FALL23-P27-Project3-dollar_bot)
+
+
+<hr>
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
@@ -18,26 +37,6 @@
    <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
-
-<hr>
-<p align="center">
-<a><img  height=350 width=350 
-  src="https://s1.mzstatic.com/us/r30/Purple1/v4/de/ab/45/deab454d-8881-b37d-9513-b0e26424cc57/pr_source.png?downloadKey=1425248837_8a393efcc4a821cbf9639d5570f8e966" alt="Dollar BoT"></a>
-</p>
-<hr>
-
-[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/usmanwardag/auto_anki)
-
-![MIT license](https://img.shields.io/badge/License-MIT-green.svg)
-[![Platform](https://img.shields.io/badge/Platform-Telegram-blue)](https://desktop.telegram.org/)
-![GitHub](https://img.shields.io/badge/Language-Python-blue.svg)
-[![GitHub contributors](https://img.shields.io/github/contributors/sak007/MyDollarBot-BOTGo)](https://github.com/ebanigogia/dollar_bot/graphs/contributors)
-[![DOI](https://zenodo.org/badge/706356133.svg)](https://zenodo.org/doi/10.5281/zenodo.10019963)
-[![Build Status](https://app.travis-ci.com/usmanwardag/dollar_bot.svg?branch=main)](https://app.travis-ci.com/usmanwardag/dollar_bot)
-[![codecov](https://codecov.io/gh/usmanwardag/dollar_bot/branch/main/graph/badge.svg?token=PYAWX95R67)](https://codecov.io/gh/usmanwardag/dollar_bot)
-
-[![GitHub issues](https://img.shields.io/github/issues/ebanigogia/dollar_bot)](https://github.com/ebanigogia/dollar_bot/issues)
-[![GitHub closed issues](https://img.shields.io/github/issues-closed/ebanigogia/dollar_bot)](https://github.com/ebanigogia/dollar_bot/issues?q=is%3Aissue+is%3Aclosed)
 
 <hr>
 
