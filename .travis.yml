@@ -8,6 +8,6 @@ install:
   - pip install codecov
 script:
   - flake8 --ignore=E501,W605
-  - coverage run -m  pytest -q test/
+  - coverage -m  pytest -q test/
 after_success:
   - bash <(curl -s https://codecov.io/bash) -t 4c6b2878-737d-4ec1-bbad-71f49e3f1b43
