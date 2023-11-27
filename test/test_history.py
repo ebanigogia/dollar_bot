@@ -19,7 +19,6 @@ def test_read_json():
     except FileNotFoundError:
         print("---------NO RECORDS FOUND---------")
 
-
 def create_message(text):
     params = {"messagebody": text}
     chat = types.User("2614394724848", False, "test")

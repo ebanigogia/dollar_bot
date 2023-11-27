@@ -133,7 +133,7 @@ def throw_exception(e, message, bot, logging):
 
 
 def createNewUserRecord():
-    return data_format
+    return {"data": [], "budget": {"overall": None, "category": None}, "income": None}
 
 
 def getOverallBudget(chatId):

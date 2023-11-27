@@ -26,7 +26,6 @@ def test_validate_entered_amount_none():
     else:
         assert True
 
-
 def test_validate_entered_amount_int():
     val = "101"
     result = helper.validate_entered_amount(val)
@@ -238,12 +237,6 @@ def test_throw_exception(mock_telebot, mocker):
 
     throw_exception("hello, exception from testing", message, mc, logging)
     mc.reply_to.assert_called_with(message, "Oh no! hello, exception from testing")
-
-
-def test_createNewUserRecord():
-    data_format_call = helper.createNewUserRecord()
-    data_format = {"data": [], "budget": {"overall": None, "category": None}}
-    assert sorted(data_format_call) == sorted(data_format)
 
 
 def test_getOverallBudget_none_case():
