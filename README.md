@@ -6,7 +6,6 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/sak007/MyDollarBot-BOTGo)](https://github.com/ebanigogia/dollar_bot/graphs/contributors)
 [![DOI](https://zenodo.org/badge/706356133.svg)](https://zenodo.org/doi/10.5281/zenodo.10019963)
 [![Build Status](https://app.travis-ci.com/usmanwardag/dollar_bot.svg?branch=main)](https://app.travis-ci.com/usmanwardag/dollar_bot)
-[![codecov](https://codecov.io/gh/usmanwardag/dollar_bot/branch/main/graph/badge.svg?token=PYAWX95R67)](https://codecov.io/gh/usmanwardag/dollar_bot)
 
 [![GitHub issues](https://img.shields.io/github/issues/ameghana/CSC510-FALL23-P27-Project3-dollar_bot)](https://github.com/ameghana/CSC510-FALL23-P27-Project3-dollar_bot/issues)
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/ameghana/CSC510-FALL23-P27-Project3-dollar_bot)](https://github.com/ameghana/CSC510-FALL23-P27-Project3-dollar_bot/issues?q=is%3Aissue+is%3Aclosed)
