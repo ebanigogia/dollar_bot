@@ -17,32 +17,7 @@
 [![Discord](https://img.shields.io/discord/1161405668079698112)](https://github.com/ameghana/CSC510-FALL23-P27-Project2/blob/main/docs/SE%20Discord%20Chat%20Screenshot.png)
 ![GitHub forks](https://img.shields.io/github/forks/ameghana/CSC510-FALL23-P27-Project3-dollar_bot)
 
-
-<hr>
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="#why-should-you-use-dollar-bot">Why should you use Dollar Bot?</a></li>
-    <li><a href="#check-out-the-video">Check out the video!</a></li>
-    <li><a href="#what-is-new-in-this-version">What is new in this version?</a></li>
-    <li><a href="#installation">Installation</a></li>
-    <li><a href="#testing">Testing</a></li>
-    <li><a href="#code-coverage">Code Coverage</a></li>
-    <li><a href="#License">License</a></li>
-    <li><a href="#code-documentation">Code Documentation</a></li>
-    <li><a href="#how-to-contribute">How to Contribute</a></li>
-    <li><a href="#future-roadmap">Future RoadMap</a></li>
-   <li><a href="#contributors">Contributors</a></li>
-   <li><a href="#acknowledgements">Acknowledgements</a></li>
-  </ol>
-</details>
-
-<hr>
-
-## Why should you use MyDollar Bot?
-
-Dollar Bot is an easy-to-use Telegram Bot that assists you in recording your daily expenses on a local system without any hassle.  
+DollarBot is a user-friendly Telegram Bot designed to simplify the process of recording your daily expenses on a local system. With simple commands and a seamless interface, DollarBot makes managing your finances a hassle-free experience. Whether you want to track your spending, view your expenses, or delete entries, DollarBot offers a simple and efficient solution. Enjoy the convenience of effortlessly recording your expenditures with DollarBot on Telegram.  
 With simple commands, this bot allows you to:
 - Add/Record new spendings
 - Display your spendings through bar graph
@@ -51,29 +26,55 @@ With simple commands, this bot allows you to:
 - Clear/Erase all your records
 - Edit/Change any spending details if you wish to
 
-## Check out the video!
+---
+
+## :rocket: Improvements in Phase-III
+
+---
+
+<p align="center">
+  <a href="#movie_camera-checkout-our-video">Checkout our video</a>
+  ::
+  <a href="#rocket-installation">Installation</a>
+  ::
+  <a href="#computer-technology-used">Technology Used</a>
+  ::
+  <a href="#bulb-use-case">Use Case</a>
+  ::
+  <a href="#page_facing_up-why">Why</a>
+  ::
+  <a href="#golf-future-roadmap">Future Roadmap</a>
+  ::
+  <a href="#sparkles-contributors">Contributors</a>
+  ::
+  <a href="#email-support">Support</a>
+
+</p>
+
+---
+
+## :movie_camera: Checkout our video!
 
 [![Demo Video](https://i9.ytimg.com/vi/aCjcT1CHAzU/mq3.jpg?sqp=COSotI0G&rs=AOn4CLD34jFIlq6GRdmTnK6p3F8O2F-Yig)](https://www.youtube.com/watch?v=O0sEIM39ejE)
 
-## What is new in this version?
-
-Checkout the [this documentation](https://github.com/ebanigogia/dollar_bot/blob/main/What_is_new.pdf)
-## Installation
+## :rocket: Installation
 
 The below instructions can be followed in order to set-up this bot at your end in a span of few minutes! Let's get started:
 
-1. Clone this repository to your local system.
-
+## 1. Clone the repository
+1. Clone the Github repository to a desired location on your computer. You will need [git](https://git-scm.com/) to be preinstalled on your machine. Once the repository is cloned, you will then `cd` into the local repository.
+   
 2. Start a terminal session in the directory where the project has been cloned. Run the following command to install the required dependencies:
 ```
   pip install -r requirements.txt
 
 ```
-3. Download and install the Telegram desktop application for your system from the following site:
+## 2. Install the Telegram desktop application
+Make sure that you have Telegram desktop application installed in your system. You can download and install the Telegram desktop application from the following website.
  ```
  https://desktop.telegram.org/
  ```
-## How to run?
+## 3. Run the application
 
 1. In Telegram, search for "BotFather". Click on "Start", and enter the following command:
 ```
@@ -81,7 +82,7 @@ The below instructions can be followed in order to set-up this bot at your end i
 ```
 2. Follow the instructions on screen and choose a name for your bot (e.g., `dollarbot`). After this, select a username for your bot that ends with "bot". The username has to be unique. 
 
-3. BotFather will now confirm the creation of your bot and provide a TOKEN to access the HTTP API - copy and save this token for future use.
+3. The BotFather will now confirm the creation of your bot and provide a TOKEN to access the HTTP API - copy and save this token for future use.
 
 4. In the repo directory (where you cloned it), run these commands to (i) grant execution access to a bash script, and (ii) execute that bash script to run the Telegram Bot:
 ```
@@ -110,6 +111,26 @@ We use pytest to perform testing on all unit tests together. The command needs t
 python run -m pytest test/
 ```
 
+## :computer: Technology Used
+
+- Python : https://www.python.org
+- Shell : https://www.learnshell.org
+- HTML : https://html.com
+
+## :bulb: Use Case
+
+- **_Expense Tracking_**: Use DollarBot to record your daily expenses, categorizing them based on your spending habits.Keep track of your spending patterns over time to better understand your financial habits.View summaries and analytics generated by DollarBot to gain insights into your overall spending trends. Identify areas where you can potentially cut costs or reallocate your budget.
+- **_Budget Management_**: Set a budget for specific categories (e.g., groceries, entertainment) and use DollarBot to monitor your adherence to those budgets.
+Receive notifications when you approach or exceed your predefined budget limits.Receive intelligent notifications from DollarBot, such as reminders to input daily expenses or alerts when you approach your budget limits.
+- **_Expense Analysis for Businesses_**: For small businesses, DollarBot can be used to track business-related expenses and analyze spending patterns.
+Generate reports to understand where the majority of business funds are allocated.
+
+## :page_facing_up: Why
+
+- DollarBot streamlines the process of recording daily expenses, providing a quick and efficient way to log spending. This efficiency can save you time and effort compared to manual methods. It helps in managing your budget effectively by allowing you to set spending limits for different categories. It provides alerts when you approach or exceed those limits, promoting better financial discipline.
+- By using DollarBot, you gain insights into your spending habits and patterns. This increased awareness can lead to more informed financial decisions and a better understanding of where your money goes. Since, it operates on a local system, ensuring the privacy and security of your financial data. This can be particularly important for users who prioritize data confidentiality.
+- Small businesses can benefit from DollarBot's expense tracking and reporting capabilities. It offers a simple yet effective tool for monitoring business-related spending. It maintains a history of your recorded expenses, allowing you to analyze past transactions. 
+
 ## Code Coverage
 
 Code coverage is part of the build. Every time new code is pushed to the repository, the build is run, and along with it, code coverage is computed. This can be viewed by selecting the build, and then choosing the codecov pop-up on hover.
@@ -136,19 +157,21 @@ We would be happy to receive contributions! If you'd like to, please go through 
 
 For any feedback, issues, or bug reports, please create an issue [here](https://github.com/usmanwardag/dollar_bot/issues/new).
 
-## Future RoadMap
+## :golf: Future RoadMap
 
 - More content can be added for the way notifications can be displayed on the user front. This can be done to make the UI more interactive.
 - Recurring expenses feature can be added for faster addition of expenses instead of following the whole process of everytime.
 
-## Contributors
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/ebanigogia"><br /><sub><b>Ebani Gogia</b></sub></a></td>
-    <td align="center"><a href="https://github.com/shrishty19"><br /><sub><b>Shrishty Singh</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/rhythmjagota"><br /><sub><b>Rhythm Jagota</b></sub></a><br /></td>
-  </tr>
-</table>
+## :sparkles: Contributors
+
+- [Meghana Chowdary Ainampudi](https://github.com/ameghana)
+- [Sai Abhigna Tummala](https://github.com/abhigna98)
+- [Sravya Karanam](https://github.com/SreeKaranam)
+- [Sucharitha Nadendla](https://github.com/Nsucharitha)
+
+## :email: Support
+
+For any queries and help, please reach out to us at: csc510se.p27@gmail.com
 
 ## Chat Channel
 
