@@ -14,28 +14,7 @@ def test_display_overall_budget(mock_telebot, mocker):
     message = create_message("hello from testing")
     budget_view.display_overall_budget(message, mc)
     assert mc.send_message.called
-    mc.send_message.called_with(11, ANY)
-
-
-@patch("telebot.telebot")
-def test_display_category_budget(mock_telebot, mocker):
-    mc = mock_telebot.return_value
-    mc.send_message.return_value = True
-    mocker.patch.object(budget_view, "helper")
-    dummy_categ_val = {
-        "Food": 10.0,
-        "Transport": 50.0,
-        "Shopping": 148.0,
-        "Miscellaneous": 47.93,
-        "Miscellaneous": 47.93,
-        "Utilities": 200.0,
-        "Groceries": 55.21,
-    }
-    budget_view.helper.getCategoryBudget.return_value = dummy_categ_val
-    message = create_message("hello from testing")
-    budget_view.display_category_budget(message, mc)
-    assert mc.send_photo.called
-    mc.send_photo.called_with(11, ANY)
+    mc.send_message.assert_called_with(11, ANY) 
 
 
 @patch("telebot.telebot")

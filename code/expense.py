@@ -48,17 +48,27 @@ def record_expense(message, category, bot):
     try:
         chat_id = message.chat.id
         amount_entered = message.text
-        amount_value = helper.validate_entered_amount(amount_entered)  # validate
+        amount_value = helper.validate_entered_amount(amount_entered)  #validate
 
         if amount_value == 0:  # cannot be $0 spending
             raise Exception("Spent amount has to be a non-zero number.")
+        
+        markup = telebot.types.ReplyKeyboardRemove()
+        msg = bot.send_message(chat_id, f"Add notes for the spent amount", reply_markup=markup)
+        bot.register_next_step_handler(msg, record_notes, amount_value,category, bot)
+    except Exception as e:
+        bot.reply_to(message, "Oh no. " + str(e))
 
+def record_notes(message,amount_value,category,bot):
+    try:
+        chat_id = message.chat.id
+        notes_entered = message.text
         date_of_entry = datetime.today().strftime(helper.getDateFormat() + " " + helper.getTimeFormat())
-        record_to_be_added = "{},{},{}".format(str(date_of_entry), category, str(amount_value))
+        record_to_be_added = "{},{},{},{}".format(str(date_of_entry), category, str(amount_value),str(notes_entered))
         
         helper.write_json(add_user_record(chat_id, record_to_be_added))
 
-        bot.send_message(chat_id, f"You have spent ${amount_value} for {category} on {date_of_entry}")
+        bot.send_message(chat_id, f"You have spent ${amount_value} for {category} with notes {notes_entered} on {date_of_entry}")
         helper.display_remaining_budget(message, bot, category)
     except Exception as e:
         bot.reply_to(message, "Oh no. " + str(e))
@@ -66,9 +76,10 @@ def record_expense(message, category, bot):
 def delete_expense(message, bot):
     markup = telebot.types.ReplyKeyboardMarkup(one_time_keyboard=True)
     expenses = helper.getUserHistory(message.chat.id)  # Get user's expense history.
+   
     for expense in expenses:
         markup.add(expense)
-    
+        
     msg = bot.send_message(message.chat.id, "Select the expense to delete:", reply_markup=markup)
     bot.register_next_step_handler(msg, confirm_delete_expense, bot)
 

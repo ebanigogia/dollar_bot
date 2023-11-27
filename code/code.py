@@ -6,10 +6,12 @@ import time
 import helper
 import edit
 import history
+import income
 import pdf
 import display
 import estimate
 import delete
+import add_recurring
 import category_delete
 import category_add
 import category_view
@@ -208,6 +210,10 @@ def command_display(message):
 def command_estimate(message):
     estimate.run(message, bot)
 
+# function to add recurring expenses
+@bot.message_handler(commands=['add_recurring'])
+def command_add_recurring(message):
+    add_recurring.run(message, bot)
 
 # handles "/delete" command
 @bot.message_handler(commands=["delete"])
@@ -224,12 +230,18 @@ def command_delete(message):
 def handle_expense_command(message):
     process_expense_command(message, bot)
 
+@bot.message_handler(commands=["download"])
+def command_download(message):
+    history.download_history(message,bot)
 
 
 @bot.message_handler(commands=["budget"])
 def command_budget(message):
     budget.run(message, bot)
 
+@bot.message_handler(commands=["income"])
+def command_income(message):
+    income.run(message, bot)
 
 # not used
 

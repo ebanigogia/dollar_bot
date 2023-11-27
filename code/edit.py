@@ -20,7 +20,11 @@ def run(m, bot):
         str_date = "Date=" + expense_data[0]
         str_category = ",\t\tCategory=" + expense_data[1]
         str_amount = ",\t\tAmount=$" + expense_data[2]
-        markup.add(str_date + str_category + str_amount)
+        if len(expense_data)==4:
+            str_notes = ",\t\tnotes=" + expense_data[3]
+        else:
+            str_notes = ",\t\tnotes=" + "<blank>"
+        markup.add(str_date + str_category + str_amount + str_notes)
     info = bot.reply_to(m, "Select expense to be edited:", reply_markup=markup)
     bot.register_next_step_handler(info, select_category_to_be_updated, bot)
 
@@ -81,6 +85,12 @@ def enter_updated_data(m, bot, selected_data):
         )
         bot.register_next_step_handler(new_cost, edit_cost, bot, selected_data)
 
+    if "notes" in choice1:
+        new_notes = bot.reply_to(
+            m, "Please type the new notes"
+        )
+        bot.register_next_step_handler(new_notes, edit_notes, bot, selected_data)
+
 
 def edit_date(bot, selected_data, result, chat_id):
     """
@@ -99,11 +109,13 @@ def edit_date(bot, selected_data, result, chat_id):
         selected_date = selected_data[0].split("=")[1]
         selected_category = selected_data[1].split("=")[1]
         selected_amount = selected_data[2].split("=")[1]
+        selected_notes = selected_data[3].split("=")[1]
+
         if (
             user_data[0] == selected_date and user_data[1] == selected_category and user_data[2] == selected_amount[1:]
         ):
             data_edit[i] = (
-                new_date + "," + selected_category + "," + selected_amount[1:]
+                new_date + "," + selected_category + "," + selected_amount[1:]+","+selected_notes
             )
             break
 
@@ -126,10 +138,12 @@ def edit_cat(m, bot, selected_data):
         selected_date = selected_data[0].split("=")[1]
         selected_category = selected_data[1].split("=")[1]
         selected_amount = selected_data[2].split("=")[1]
+        selected_notes = selected_data[3].split("=")[1]
+
         if (
             user_data[0] == selected_date and user_data[1] == selected_category and user_data[2] == selected_amount[1:]
         ):
-            data_edit[i] = selected_date + "," + new_cat + "," + selected_amount[1:]
+            data_edit[i] = selected_date + "," + new_cat + "," + selected_amount[1:]+","+selected_notes
             break
 
     user_list[str(chat_id)]["data"] = data_edit
@@ -154,14 +168,43 @@ def edit_cost(m, bot, selected_data):
             selected_date = selected_data[0].split("=")[1]
             selected_category = selected_data[1].split("=")[1]
             selected_amount = selected_data[2].split("=")[1]
+            selected_notes = selected_data[3].split("=")[1]
+
             if (
                 user_data[0] == selected_date and user_data[1] == selected_category and user_data[2] == selected_amount[1:]
             ):
-                data_edit[i] = selected_date + "," + selected_category + "," + new_cost
+                data_edit[i] = selected_date + "," + selected_category + "," + new_cost+","+selected_notes
                 break
         user_list[str(chat_id)]["data"] = data_edit
         helper.write_json(user_list)
         bot.reply_to(m, "Expense amount is updated")
     else:
         bot.reply_to(m, "The cost is invalid")
+        return
+
+def edit_notes(m, bot, selected_data):
+    
+    user_list = helper.read_json()
+    new_notes = "" if m.text is None else m.text
+    chat_id = m.chat.id
+    data_edit = helper.getUserHistory(chat_id)
+
+    if new_notes != "":
+        for i in range(len(data_edit)):
+            user_data = data_edit[i].split(",")
+            selected_date = selected_data[0].split("=")[1]
+            selected_category = selected_data[1].split("=")[1]
+            selected_amount = selected_data[2].split("=")[1]
+            selected_notes = selected_data[3].split("=")[1]
+
+            if (
+                user_data[0] == selected_date and user_data[1] == selected_category and user_data[2] == selected_amount[1:] and user_data[3]==selected_notes
+            ):
+                data_edit[i] = selected_date + "," + selected_category + "," + selected_amount[1:]+","+new_notes
+                break
+        user_list[str(chat_id)]["data"] = data_edit
+        helper.write_json(user_list)
+        bot.reply_to(m, "Notes is updated")
+    else:
+        bot.reply_to(m, "invalid")
         return
