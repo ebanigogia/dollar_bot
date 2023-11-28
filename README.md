@@ -174,8 +174,7 @@ For any feedback, issues, or bug reports, please create an issue [here](https://
 
 ## :golf: Future RoadMap
 
-- More content can be added for the way notifications can be displayed on the user front. This can be done to make the UI more interactive.
-- Recurring expenses feature can be added for faster addition of expenses instead of following the whole process of everytime.
+
 
 ## :sparkles: Contributors
 
