@@ -179,6 +179,7 @@ For any feedback, issues, or bug reports, please create an issue [here](https://
 
 -Developing further enhancements to record split expenses
 -Build machine learning model to predict the future expenses to estimate the budget
+-More interative UI where the bot answers general questions as well
 
 ## :sparkles: Contributors
 
