@@ -198,7 +198,7 @@ For any queries and help, please reach out to us at: csc510se.p27@gmail.com
 
 ## Chat Channel
 
-- https://discord.com/channels/1164337248746082394/1164337249387823152
+- https://discord.com/channels/1161405668079698112/1161405668578836530
 
 
 
