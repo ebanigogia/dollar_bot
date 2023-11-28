@@ -28,7 +28,14 @@ With simple commands, this bot allows you to:
 ---
 
 ## :rocket: Improvements in Phase-III
-
+- Command to download history of expenses as a csv file
+- Added a calender feature to update and edit dates
+- Coded a feature to update and delete dates
+- Added a feature to easily access the recurring expenses
+- Feature to send notification via email
+- More than 120 testcases to validate the application
+- Detailed testcases
+  
 ---
 
 <p align="center">
@@ -174,8 +181,9 @@ For any feedback, issues, or bug reports, please create an issue [here](https://
 
 ## :golf: Future RoadMap
 
-- More content can be added for the way notifications can be displayed on the user front. This can be done to make the UI more interactive.
-- Recurring expenses feature can be added for faster addition of expenses instead of following the whole process of everytime.
+-Developing further enhancements to record split expenses
+-Build machine learning model to predict the future expenses to estimate the budget
+-More interative UI where the bot answers general questions as well
 
 ## :sparkles: Contributors
 
