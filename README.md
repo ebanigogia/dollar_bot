@@ -71,7 +71,10 @@ With simple commands, this bot allows you to:
 
 ## :movie_camera: Checkout our video!
 
-[![Demo Video](https://i9.ytimg.com/vi/aCjcT1CHAzU/mq3.jpg?sqp=COSotI0G&rs=AOn4CLD34jFIlq6GRdmTnK6p3F8O2F-Yig)](https://www.youtube.com/watch?v=O0sEIM39ejE)
+
+<p align="center"><img width="700" src="./assets/Dollar_Bot_Execution.gif"></p>
+
+
 
 ## :computer: Technology Used
 
