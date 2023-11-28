@@ -174,7 +174,8 @@ For any feedback, issues, or bug reports, please create an issue [here](https://
 
 ## :golf: Future RoadMap
 
-
+-Developing further enhancements to record split expenses
+-Build machine learning model to predict the future expenses to estimate the budget
 
 ## :sparkles: Contributors
 
