@@ -58,7 +58,7 @@ Notes                                                                           
 4.3) If you provide more extensive documentation, does this provide clear, step-by-step instructions on how to deploy and use your software? | YES |
 4.4) Do you provide a comprehensive guide to all your software’s commands, functions and options?| YES |
 4.5) Do you provide troubleshooting information that describes the symptoms and step-by-step solutions for problems and error messages? | YES |
-4.6) If your software can be used as a library, package or service by other software, do you provide comprehensive API documentation? | YES |
+4.6) If your software can be used as a library, package or service by other software, do you provide comprehensive API documentation? | NO |
 4.7) Do you store your documentation under revision control with your source code? | YES |
 4.8) Do you publish your release history e.g. release data, version numbers, key features of each release etc. on your web site or in your documentation? | YES |
 *Q5 - How you support your software*| | |
