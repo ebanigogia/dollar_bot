@@ -31,7 +31,11 @@ With simple commands, this bot allows you to:
 - Command to download history of expenses as a csv file
 - Added a calender feature to update and edit dates
 - Coded a feature to update and delete dates
--
+- Added a feature to easily access the recurring expenses
+- Feature to send notification via email
+- More than 120 testcases to validate the application
+- Detailed testcases
+  
 ---
 
 <p align="center">
