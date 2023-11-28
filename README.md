@@ -31,7 +31,7 @@ With simple commands, this bot allows you to:
 - Command to download history of expenses as a csv file
 - Added a calender feature to update and edit dates
 - Coded a feature to update and delete dates
-
+-
 ---
 
 <p align="center">
