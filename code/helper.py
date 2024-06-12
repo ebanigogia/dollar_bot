@@ -1,9 +1,11 @@
 import re
 import json
 import os
+import notification
 from datetime import datetime
 
 from notify import notify
+
 
 spend_categories = [
     "Food",
@@ -20,14 +22,18 @@ update_options = {"continue": "Continue", "exit": "Exit"}
 
 budget_options = {"update": "Add/Update", "view": "View", "delete": "Delete"}
 
+income_options = {"update": "Add/Update", "view": "View", "delete": "Delete"}
+    
 budget_types = {"overall": "Overall Budget", "category": "Category-Wise Budget"}
 
-data_format = {"data": [], "budget": {"overall": None, "category": None}}
+data_format = {"data": [],"income":None,"budget": {"overall": None, "category": None}}
 
 # set of implemented commands and their description
 commands = {
     "help": "Display the list of commands.",
     "pdf": "Save history as PDF.",
+    "download":"Download expenses as CSV",
+    "add_recurring":"To add recurring expenses",
     "category": "This option is for add/view/delete the categories \
        \n 1. After clicking on add/update, it will ask you to add the category \
        \n 2. After clicking on view, it will help you to view the list of the categories \
@@ -43,6 +49,10 @@ commands = {
         \n 1. The Add/update category is to set the new budget or update the existing budget \
         \n 2. The view category gives the detail if budget is exceeding or in limit with the difference amount \
         \n 3. The delete category allows to delete the budget and start afresh!  ",
+    "income": "This option is to set/update/delete the income. \
+        \n 1. The Add/update category is to set the new income or update the existing income \
+        \n 2. The view category displays the existing income \
+        \n 3. The delete category allows to delete the income and start afresh!  ",
 }
 
 dateFormat = "%d-%b-%Y"
@@ -124,7 +134,7 @@ def throw_exception(e, message, bot, logging):
 
 
 def createNewUserRecord():
-    return data_format
+    return {"data": [], "budget": {"overall": None, "category": None}, "income": None}
 
 
 def getOverallBudget(chatId):
@@ -140,6 +150,13 @@ def getCategoryBudget(chatId):
         return None
     return data["budget"]["category"]
 
+def getTotalIncome(chatId):
+    data = getUserData(chatId)
+    if data is None:
+        return None
+    if "income" not in data:
+        data["income"]=0
+    return data["income"]
 
 def getCategoryBudgetByCategory(chatId, cat):
     if not isCategoryBudgetByCategoryAvailable(chatId, cat):
@@ -182,12 +199,16 @@ def display_remaining_overall_budget(message, bot):
     remaining_budget = calculateRemainingOverallBudget(chat_id)
     print("here", remaining_budget)
     if remaining_budget >= 0:
+        subject="Remaining Budget!"
         msg = "\nRemaining Overall Budget is $" + str(remaining_budget)
+        notification.send_email_notification(subject,msg)
     else:
+        subject="Exceeding Budget!"
         msg = (
             "\nBudget Exceded!\nExpenditure exceeds the budget by $" + str(remaining_budget)[1:]
         )
         # notify()
+        notification.send_email_notification(subject,msg)
     bot.send_message(chat_id, msg)
 
 
@@ -199,6 +220,14 @@ def calculateRemainingOverallBudget(chat_id):
 
     return float(budget) - calculate_total_spendings(queryResult)
 
+def validate_entered_duration(duration_entered):
+    if duration_entered is None:
+        return 0
+    if re.match("^[1-9][0-9]{0,14}", duration_entered):
+        duration = int(duration_entered)
+        if duration > 0:
+            return str(duration)
+    return 0
 
 def calculate_total_spendings(queryResult):
     total = 0
@@ -239,6 +268,9 @@ def calculate_total_spendings_for_category(queryResult, cat):
         if cat == s[1]:
             total = total + float(s[2])
     return total
+
+def isTotalIncomeAvailable(chatId):
+    return getTotalIncome(chatId) is not None 
 
 
 def getSpendCategories():
@@ -301,3 +333,6 @@ def getBudgetTypes():
 
 def getUpdateOptions():
     return update_options
+
+def getOptions():
+    return income_options

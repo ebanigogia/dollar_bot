@@ -111,6 +111,7 @@ def update_category_budget(message, bot):
     markup.row_width = 2
     for c in categories:
         markup.add(c)
+    markup.add("Exit")
     msg = bot.reply_to(message, "Select Category", reply_markup=markup)
     bot.register_next_step_handler(msg, post_category_selection, bot)
 
@@ -128,6 +129,9 @@ def post_category_selection(message, bot):
     try:
         chat_id = message.chat.id
         selected_category = message.text
+        if selected_category.lower() == "exit":
+            bot.send_message(chat_id, "Exiting category budget update.")
+            return  # Exit the function without further processing
         categories = helper.getSpendCategories()
         if selected_category not in categories:
             bot.send_message(
